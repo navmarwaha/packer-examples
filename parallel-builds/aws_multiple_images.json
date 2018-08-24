@@ -2,7 +2,7 @@
   "variables": {
     "aws_access_key": "",
     "aws_secret_key": "",
-    "dest_regions": "",
+    "dest_regions": "ap-south-1",
     "img_version": ""
   },
   "builders": [
