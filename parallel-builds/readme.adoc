@@ -6,7 +6,15 @@ This template builds Multiple AWS AMIs (CentOS 7, Ubuntu 16.04, Debian 9) with D
 
  - You need to install https://www.packer.io/intro/getting-started/install.html[Packer] on your local machine.
  - You need to add your AWS Access Key & Secure Key to the variables file (vars/variable.json).
- - You need to add the Subnet ID of the AWS region where you want Packer to spin up instance for bundling the AMI in the tempate itself.
+ - You need to add the Subnet ID in the tempate itself. Packer launches instances in this Subnet to bundle the AMI
+
+== Note
+ 
+ - This Packer template registers the AMIs to ap-south-1 region by default. You can copy this image to other region(s) by passing variable```dest_regions``` from command line.
+
+	$ packer build -var-file=vars/variables.json -var 'img_version=1.0' -var 'dest_regions=us-west-2' aws_multiple_images.json
+
+	$ packer build -var-file=vars/variables.json -var 'img_version=1.0' -var 'dest_regions=us-west-2,ap-southeast-1' aws_multiple_images.json
 
 == Build
 
