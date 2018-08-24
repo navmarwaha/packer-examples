@@ -1,10 +1,11 @@
 = Multiple AWS AMIs with Docker Installed
 
-This template builds Multiple AWS AMIs (CentOS 7, Ubuntu 16.04, Debian 9) with Docker Pre-Installed on them.
+This template builds Multiple AWS AMIs (CentOS 7, Ubuntu 16.04, Debian 9) with Docker Installed on them.
 
 == Requirements
 
-. You need to install [Packer](https://www.packer.io/intro/getting-started/install.html) on your local machine.
+. You need to install
+   - [Packer](https://www.packer.io/intro/getting-started/install.html)
 . You need to add your AWS Access Key & Secure Key to the variables file (vars/variable.json).
 . You need to add the Subnet ID of the AWS region where you want Packer to spin up instance for bundling the AMI in the tempate itself.
 
