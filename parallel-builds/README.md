@@ -1,19 +1,19 @@
-= Multiple AWS AMIs with Docker Installed
+# Multiple AWS AMIs with Docker Installed
 
 This template builds Multiple AWS AMIs (CentOS 7, Ubuntu 16.04, Debian 9) with Docker CE Installed on them.
 
-== Requirements
+## Requirements
 
- - You need to install https://www.packer.io/intro/getting-started/install.html[Packer] on your local machine.
+ - You need to install [Packer](https://www.packer.io/intro/getting-started/install.html) on your local machine.
  - You need to add your AWS Access Key & Secret Key to the variables file ```vars/variable.json```.
  - You need to add the Subnet ID in the tempate itself. Packer launches instances in this Subnet to bundle the AMI
 
-== Build
+## Build
 
  - Run the following command to trigger the build
 
 	$ packer build -var-file=vars/variables.json -var 'img_version=1.0' aws_multiple_images.json
-== Note
+## Note
  
  - This Packer template registers the AMIs to ```ap-south-1``` region by default. You can copy these images to other region(s) by passing variable```dest_regions``` from command line.
 
