@@ -6,11 +6,11 @@ This template builds Multiple AWS AMIs (CentOS 7, Ubuntu 16.04, Debian 9) with D
 
  - You need to install [Packer](https://www.packer.io/intro/getting-started/install.html) on your local machine.
  - You need to add your AWS Access Key & Secret Key to the variables file ```vars/variable.json```.
- - You need to add the Subnet ID in the tempate itself. Packer launches instances in this Subnet to bundle the AMI
+ - You need to add the Subnet ID in the tempate itself. Packer launches instances in this Subnet to bundle the AMI.
 
 ## Build
 
-Run the following command to trigger the build
+Run the following command to trigger the build.
 
 	$ packer build -var-file=vars/variables.json -var 'img_version=1.0' aws_multiple_images.json
 ## Note
