@@ -2,10 +2,11 @@
   "variables": {
     "aws_access_key": "",
     "aws_secret_key": "",
-    "dest_regions": "ap-south-1",
+    "dest_regions": "",
     "img_version": ""
-  },
-  "builders": [
+   },
+
+   "builders": [
     {
       "name": "centos",
       "type": "amazon-ebs",
@@ -52,5 +53,11 @@
       "ami_name": "my_debian_{{user `img_version`}}",
       "ami_regions": "{{user `dest_regions`}}"
     }
-  ]
+],
+
+   "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/install_docker.sh"
+    }]
 }
