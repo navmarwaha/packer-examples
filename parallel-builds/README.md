@@ -10,12 +10,12 @@ This template builds Multiple AWS AMIs (CentOS 7, Ubuntu 16.04, Debian 9) with D
 
 ## Build
 
- - Run the following command to trigger the build
+Run the following command to trigger the build
 
 	$ packer build -var-file=vars/variables.json -var 'img_version=1.0' aws_multiple_images.json
 ## Note
  
- - This Packer template registers the AMIs to ```ap-south-1``` region by default. You can copy these images to other region(s) by passing variable```dest_regions``` from command line.
+This Packer template registers the AMIs to ```ap-south-1``` region by default. You can copy these images to other region(s) by passing variable```dest_regions``` from command line.
 
 	$ packer build -var-file=vars/variables.json -var 'img_version=1.0' -var 'dest_regions=us-west-2' aws_multiple_images.json
 
